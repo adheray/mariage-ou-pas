@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ArrowRight, ArrowLeft, RotateCcw, Share2, MessageCircle, Lightbulb } from 'lucide-react';
+import { ResultIllustration } from '@/components/illustrations/ResultIllustration';
 import { simulerImpots, type SimulationResult } from '@/lib/calculs/impots';
 
 const schema = z.object({
@@ -283,9 +284,8 @@ export function SimulationWizard() {
     return (
       <div className="card-premium rounded-3xl p-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="text-center mb-8">
-          <div className="text-6xl mb-4">
-            {result.recommandation === 'mariage' ? '💍' :
-             result.recommandation === 'pacs' ? '📝' : '🤷'}
+          <div className="flex justify-center mb-4">
+            <ResultIllustration type={result.recommandation as 'mariage' | 'pacs' | 'neutre'} />
           </div>
           <p className="text-sm text-slate-400 uppercase tracking-widest mb-2 font-medium">
             Notre recommandation

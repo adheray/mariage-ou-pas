@@ -1,12 +1,16 @@
 import { SimulationWizard } from "@/components/wizard/SimulationWizard";
 import { FAQ } from "@/components/FAQ";
+import { CoupleIllustration } from "@/components/illustrations/CoupleIllustration";
 
 export default function Home() {
   return (
     <main className="min-h-screen py-12 px-4 bg-[#F8F9FA]">
       <div className="max-w-md mx-auto">
-        {/* Header */}
+        {/* Illustration + Header */}
         <div className="text-center mb-6">
+          <div className="flex justify-center mb-4">
+            <CoupleIllustration />
+          </div>
           <h1 className="text-4xl font-bold tracking-tight mb-2">
             <span className="text-[#E11D48]">Mariage</span>
             {' '}
