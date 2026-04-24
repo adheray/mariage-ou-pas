@@ -369,6 +369,57 @@ export function SimulationWizard() {
           <p>Impôts ensemble : <span className="font-semibold">{result.impotMaries.toLocaleString('fr-FR')}€/an</span></p>
         </div>
 
+        {/* Affiliation — liens contextuels selon recommandation */}
+        <div className="mb-6 space-y-3">
+          {result.recommandation === 'mariage' && (
+            <a
+              href="https://www.fortuneo.fr/compte-courant?codeParrain=AFFILIATE_FORTUNEO" /* TODO: remplacer par lien Awin Fortuneo */
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border-2 border-[#FBCFE8] hover:border-[#DB2777] hover:shadow-sm transition-all cursor-pointer group"
+            >
+              <span className="text-2xl">🏦</span>
+              <div className="flex-1 text-left">
+                <p className="text-sm font-semibold text-[#831843]">Ouvrez un compte joint chez Fortuneo</p>
+                <p className="text-xs text-[#9D174D]/60">Gratuit, sans conditions de revenus — parfait pour gérer vos finances communes</p>
+              </div>
+              <span className="text-[#DB2777] text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          )}
+          {result.recommandation === 'pacs' && (
+            <a
+              href="https://www.fortuneo.fr/compte-courant?codeParrain=AFFILIATE_FORTUNEO" /* TODO: remplacer par lien Awin Fortuneo */
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border-2 border-[#FBCFE8] hover:border-[#DB2777] hover:shadow-sm transition-all cursor-pointer group"
+            >
+              <span className="text-2xl">🏦</span>
+              <div className="flex-1 text-left">
+                <p className="text-sm font-semibold text-[#831843]">Ouvrez un compte joint chez Fortuneo</p>
+                <p className="text-xs text-[#9D174D]/60">Idéal pour les couples pacsés — zéro frais de tenue de compte</p>
+              </div>
+              <span className="text-[#DB2777] text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          )}
+          {(result.economieMarriage > 0 || result.economiePacs > 0) && (
+            <a
+              href="https://yomoni.fr/?parrain=AFFILIATE_YOMONI" /* TODO: remplacer par lien Yomoni */
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border-2 border-[#FBCFE8] hover:border-[#DB2777] hover:shadow-sm transition-all cursor-pointer group"
+            >
+              <span className="text-2xl">📈</span>
+              <div className="flex-1 text-left">
+                <p className="text-sm font-semibold text-[#831843]">Placez votre économie avec Yomoni</p>
+                <p className="text-xs text-[#9D174D]/60">
+                  {Math.max(result.economieMarriage, result.economiePacs).toLocaleString('fr-FR')}€/an investis = {(Math.max(result.economieMarriage, result.economiePacs) * 10 * 0.05).toLocaleString('fr-FR', { maximumFractionDigits: 0 })}€ en 10 ans (hypothèse 5%/an)
+                </p>
+              </div>
+              <span className="text-[#DB2777] text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          )}
+        </div>
+
         {/* Partage */}
         <div className="flex gap-3 mb-4">
           <button
