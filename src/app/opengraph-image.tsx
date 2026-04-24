@@ -63,46 +63,62 @@ export default async function Image() {
               <polygon points="16,6 21,13 16,10.5" fill="rgba(255,255,255,0.55)" />
               <line x1="12.5" y1="8" x2="14" y2="9.5" stroke="rgba(255,255,255,0.75)" strokeWidth="1.2" strokeLinecap="round" />
             </svg>
-            <span
-              style={{
-                fontSize: 22,
-                fontWeight: 600,
-                color: '#0F172A',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Mariage<span style={{ color: '#E11D48' }}> ou Pas ?</span>
+            {/* Satori ne supporte pas les spans imbriqués — flex row */}
+            <span style={{ fontSize: 22, fontWeight: 600, color: '#0F172A', letterSpacing: '-0.02em' }}>
+              Mariage
+            </span>
+            <span style={{ fontSize: 22, fontWeight: 600, color: '#E11D48', letterSpacing: '-0.02em', marginLeft: 4 }}>
+              {' '}ou Pas ?
             </span>
           </div>
 
-          {/* Headline */}
-          <h1
+          {/* Headline — div flex row pour éviter l'overlap Satori */}
+          <div
             style={{
-              fontSize: 72,
-              fontWeight: 800,
-              margin: 0,
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'baseline',
+              flexWrap: 'wrap',
+              gap: 18,
               marginBottom: 16,
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
-              color: '#0F172A',
             }}
           >
-            <span style={{ color: '#E11D48' }}>Mariage</span>
-            {' '}ou PACS ?
-          </h1>
+            <span
+              style={{
+                fontSize: 72,
+                fontWeight: 800,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                color: '#E11D48',
+              }}
+            >
+              Mariage
+            </span>
+            <span
+              style={{
+                fontSize: 72,
+                fontWeight: 800,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                color: '#0F172A',
+              }}
+            >
+              ou PACS ?
+            </span>
+          </div>
 
           {/* Sous-titre */}
-          <p
+          <div
             style={{
               fontSize: 28,
               color: '#64748B',
-              margin: 0,
               marginBottom: 48,
               fontWeight: 400,
+              display: 'flex',
             }}
           >
-            Simulateur fiscal gratuit — calculez vos économies d'impôts
-          </p>
+            Simulateur fiscal gratuit — calculez vos economies d&apos;impots
+          </div>
 
           {/* Badges */}
           <div style={{ display: 'flex', gap: 16 }}>
