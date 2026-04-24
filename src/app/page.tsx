@@ -1,6 +1,7 @@
 import { SimulationWizard } from "@/components/wizard/SimulationWizard";
 import { FAQ } from "@/components/FAQ";
 import { CoupleIllustration } from "@/components/illustrations/CoupleIllustration";
+import { LogoFull } from "@/components/Logo";
 
 export default function Home() {
   return (
@@ -13,6 +14,11 @@ export default function Home() {
       `
     }}>
       <div className="max-w-md mx-auto">
+        {/* Logo */}
+        <div className="flex justify-center mb-8">
+          <LogoFull />
+        </div>
+
         {/* Illustration + Header */}
         <div className="text-center mb-6">
           <div className="flex justify-center mb-4">

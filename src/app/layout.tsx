@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   description: "Simulez gratuitement l'avantage fiscal du mariage ou du PACS pour votre couple. Calcul instantané de vos économies d'impôts selon vos revenus. 14 000+ simulations réalisées.",
   keywords: ["simulateur mariage", "simulateur PACS", "économie impôts couple", "mariage ou pacs", "avantage fiscal mariage", "calcul impôt couple"],
   authors: [{ name: "Bob le Développeur" }],
-  metadataBase: new URL("https://mariage-ou-pas.vercel.app"),
+  metadataBase: new URL("https://mariage-ou-pas.fr"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Mariage ou PACS : Simulateur Fiscal Gratuit",
     description: "Calculez vos économies d'impôts en 2 minutes. Simulation gratuite et instantanée.",
-    url: "https://mariage-ou-pas.vercel.app",
+    url: "https://mariage-ou-pas.fr",
     siteName: "Mariage ou Pas",
     locale: "fr_FR",
     type: "website",
