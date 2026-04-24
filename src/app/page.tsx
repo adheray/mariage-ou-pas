@@ -83,10 +83,29 @@ export default function Home() {
           </p>
         </section>
 
-        <footer className="mt-8 text-center">
+        <footer className="mt-8 text-center space-y-2">
           <p className="text-xs text-slate-400">
             Simulation indicative · Barème IR 2024
           </p>
+          <p className="text-xs text-slate-400">
+            Ce site utilise Google Analytics pour mesurer l&apos;audience.{' '}
+            <a
+              href="https://tools.google.com/dlpage/gaoptout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-slate-600"
+            >
+              Se désinscrire
+            </a>
+          </p>
+          <div className="flex justify-center gap-4 text-xs text-slate-400">
+            <a href="/mentions-legales" className="hover:text-slate-600 underline">
+              Mentions légales
+            </a>
+            <a href="/confidentialite" className="hover:text-slate-600 underline">
+              Confidentialité
+            </a>
+          </div>
         </footer>
       </div>
     </main>
