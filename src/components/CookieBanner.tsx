@@ -1,8 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Script from 'next/script';
 import Link from 'next/link';
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const CONSENT_KEY = 'cookie_consent';
@@ -18,11 +24,29 @@ export function CookieBanner() {
     if (stored) {
       setConsent(stored);
     } else {
-      // Délai léger pour éviter le flash sur SSR
       const t = setTimeout(() => setVisible(true), 400);
       return () => clearTimeout(t);
     }
   }, []);
+
+  useEffect(() => {
+    if (consent !== 'accepted' || !GA_ID) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: unknown[]) {
+        window.dataLayer.push(args);
+      }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    };
+  }, [consent]);
 
   function accept() {
     localStorage.setItem(CONSENT_KEY, 'accepted');
@@ -38,27 +62,6 @@ export function CookieBanner() {
 
   return (
     <>
-      {/* GA — chargé uniquement après consentement */}
-      {consent === 'accepted' && GA_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script
-            id="ga-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', { anonymize_ip: true });
-              `,
-            }}
-          />
-        </>
-      )}
 
       {/* Bandeau cookies */}
       {visible && (
