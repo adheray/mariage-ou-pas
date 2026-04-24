@@ -9,26 +9,28 @@ export default function Home() {
 
       {/* Watermark ring — grand décor en fond */}
       <div className="pointer-events-none fixed inset-0 flex items-center justify-center" aria-hidden="true">
-        <svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.035]">
+        <svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.10]">
           {/* Outer ring */}
-          <circle cx="450" cy="500" r="360" stroke="#E11D48" strokeWidth="3" fill="none" />
+          <circle cx="450" cy="500" r="360" stroke="#E11D48" strokeWidth="5" fill="none" />
           {/* Inner ring */}
-          <circle cx="450" cy="500" r="280" stroke="#E11D48" strokeWidth="1.5" fill="none" />
-          {/* Band */}
-          <ellipse cx="450" cy="500" rx="360" ry="40" stroke="#E11D48" strokeWidth="1" fill="none" />
+          <circle cx="450" cy="500" r="280" stroke="#E11D48" strokeWidth="2.5" fill="none" />
+          {/* Band equator */}
+          <ellipse cx="450" cy="500" rx="360" ry="50" stroke="#E11D48" strokeWidth="2" fill="none" />
+          {/* Ring fill subtle */}
+          <circle cx="450" cy="500" r="360" fill="#E11D48" fillOpacity="0.03" />
           {/* Diamond facets */}
-          <polygon points="450,80 560,240 450,290 340,240" stroke="#E11D48" strokeWidth="2" fill="#E11D48" fillOpacity="0.15" />
-          <polygon points="450,80 560,240 450,180 340,240" stroke="#E11D48" strokeWidth="1" fill="#E11D48" fillOpacity="0.08" />
-          <polygon points="340,240 450,290 560,240 450,290" stroke="#E11D48" strokeWidth="1" fill="#E11D48" fillOpacity="0.05" />
-          {/* Side facet lines */}
-          <line x1="450" y1="80" x2="450" y2="290" stroke="#E11D48" strokeWidth="1" opacity="0.4" />
-          <line x1="340" y1="240" x2="560" y2="240" stroke="#E11D48" strokeWidth="1" opacity="0.4" />
+          <polygon points="450,80 580,250 450,300 320,250" stroke="#E11D48" strokeWidth="3" fill="#E11D48" fillOpacity="0.12" />
+          <polygon points="450,80 580,250 450,185 320,250" stroke="#E11D48" strokeWidth="1.5" fill="#E11D48" fillOpacity="0.07" />
+          <polygon points="320,250 450,300 580,250" stroke="#E11D48" strokeWidth="1.5" fill="#E11D48" fillOpacity="0.05" />
+          {/* Facet lines */}
+          <line x1="450" y1="80" x2="450" y2="300" stroke="#E11D48" strokeWidth="2" />
+          <line x1="320" y1="250" x2="580" y2="250" stroke="#E11D48" strokeWidth="2" />
           {/* Shine dots */}
-          <circle cx="390" cy="130" r="6" fill="#F59E0B" fillOpacity="0.5" />
-          <circle cx="700" cy="200" r="4" fill="#E11D48" fillOpacity="0.4" />
-          <circle cx="180" cy="280" r="4" fill="#E11D48" fillOpacity="0.3" />
-          <circle cx="720" cy="650" r="5" fill="#F59E0B" fillOpacity="0.3" />
-          <circle cx="160" cy="680" r="3" fill="#E11D48" fillOpacity="0.3" />
+          <circle cx="380" cy="125" r="9" fill="#F59E0B" />
+          <circle cx="710" cy="195" r="6" fill="#E11D48" />
+          <circle cx="175" cy="275" r="6" fill="#E11D48" />
+          <circle cx="730" cy="660" r="7" fill="#F59E0B" />
+          <circle cx="155" cy="690" r="5" fill="#E11D48" />
         </svg>
       </div>
 
