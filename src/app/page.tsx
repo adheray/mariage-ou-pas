@@ -4,7 +4,14 @@ import { CoupleIllustration } from "@/components/illustrations/CoupleIllustratio
 
 export default function Home() {
   return (
-    <main className="min-h-screen py-12 px-4 bg-[#F8F9FA]">
+    <main className="min-h-screen py-12 px-4" style={{
+      background: `
+        radial-gradient(ellipse 70% 50% at 15% 0%, rgba(225, 29, 72, 0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 85% 90%, rgba(245, 158, 11, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(148, 163, 184, 0.04) 0%, transparent 70%),
+        #F8F9FA
+      `
+    }}>
       <div className="max-w-md mx-auto">
         {/* Illustration + Header */}
         <div className="text-center mb-6">
