@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Simulateur fiscal mariage ou PACS';
+export const alt = 'Simulateur fiscal mariage ou PACS — Calculez vos économies d\'impôts';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -13,65 +13,147 @@ export default async function Image() {
           height: '100%',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #FDF2F8 0%, #FBCFE8 50%, #F9A8D4 100%)',
-          fontFamily: 'system-ui, sans-serif',
+          background: '#F8F9FA',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
+        {/* Watermark ring — fond décoratif */}
+        <div
+          style={{
+            position: 'absolute',
+            right: -120,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            display: 'flex',
+          }}
+        >
+          <svg width="700" height="700" viewBox="0 0 700 700" fill="none">
+            <circle cx="350" cy="350" r="300" stroke="#E11D48" strokeWidth="4" fill="none" opacity="0.08" />
+            <circle cx="350" cy="350" r="230" stroke="#E11D48" strokeWidth="2" fill="none" opacity="0.06" />
+            <ellipse cx="350" cy="350" rx="300" ry="45" stroke="#E11D48" strokeWidth="2" fill="none" opacity="0.06" />
+            <polygon points="350,60 460,200 350,245 240,200" stroke="#E11D48" strokeWidth="2.5" fill="#E11D48" fillOpacity="0.08" />
+            <polygon points="350,60 460,200 350,145 240,200" stroke="#E11D48" strokeWidth="1.5" fill="#E11D48" fillOpacity="0.04" />
+            <line x1="350" y1="60" x2="350" y2="245" stroke="#E11D48" strokeWidth="1.5" opacity="0.10" />
+            <line x1="240" y1="200" x2="460" y2="200" stroke="#E11D48" strokeWidth="1.5" opacity="0.10" />
+          </svg>
+        </div>
+
+        {/* Contenu principal */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'white',
-            borderRadius: 32,
-            padding: '60px 80px',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+            padding: '0 100px',
+            maxWidth: 720,
+            position: 'relative',
+            zIndex: 1,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
-            <span style={{ fontSize: 72, marginRight: 16 }}>💒</span>
-            <span style={{ fontSize: 48, color: '#9D174D' }}>vs</span>
-            <span style={{ fontSize: 72, marginLeft: 16 }}>📋</span>
+          {/* Logo */}
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 40, gap: 14 }}>
+            {/* LogoMark SVG */}
+            <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="#E11D48" />
+              <circle cx="16" cy="21" r="7" stroke="white" strokeWidth="2.5" fill="none" />
+              <polygon points="16,6 21,13 16,15.5 11,13" fill="white" />
+              <polygon points="16,6 21,13 16,10.5" fill="rgba(255,255,255,0.55)" />
+              <line x1="12.5" y1="8" x2="14" y2="9.5" stroke="rgba(255,255,255,0.75)" strokeWidth="1.2" strokeLinecap="round" />
+            </svg>
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 600,
+                color: '#0F172A',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Mariage<span style={{ color: '#E11D48' }}> ou Pas ?</span>
+            </span>
           </div>
+
+          {/* Headline */}
           <h1
             style={{
-              fontSize: 64,
-              fontWeight: 'bold',
+              fontSize: 72,
+              fontWeight: 800,
               margin: 0,
               marginBottom: 16,
+              lineHeight: 1.05,
+              letterSpacing: '-0.03em',
+              color: '#0F172A',
             }}
           >
-            <span style={{ color: '#DB2777' }}>Mariage</span>
-            <span style={{ color: '#831843' }}> ou PACS ?</span>
+            <span style={{ color: '#E11D48' }}>Mariage</span>
+            {' '}ou PACS ?
           </h1>
+
+          {/* Sous-titre */}
           <p
             style={{
               fontSize: 28,
-              color: '#9D174D',
+              color: '#64748B',
               margin: 0,
-              marginBottom: 32,
+              marginBottom: 48,
+              fontWeight: 400,
             }}
           >
-            Simulateur fiscal gratuit
+            Simulateur fiscal gratuit — calculez vos économies d'impôts
           </p>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 16,
-              background: '#FDF2F8',
-              padding: '16px 32px',
-              borderRadius: 16,
-            }}
-          >
-            <span style={{ fontSize: 36 }}>💰</span>
-            <span style={{ fontSize: 32, fontWeight: 'bold', color: '#831843' }}>
-              1 847 € d'économie moyenne/an
-            </span>
+
+          {/* Badges */}
+          <div style={{ display: 'flex', gap: 16 }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: '#FFF1F2',
+                border: '1.5px solid #FECDD3',
+                borderRadius: 12,
+                padding: '12px 24px',
+                gap: 10,
+              }}
+            >
+              <span style={{ fontSize: 22 }}>⚡</span>
+              <span style={{ fontSize: 18, fontWeight: 600, color: '#BE123C' }}>
+                Résultat instantané
+              </span>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: '#F8FAFC',
+                border: '1.5px solid #E2E8F0',
+                borderRadius: 12,
+                padding: '12px 24px',
+                gap: 10,
+              }}
+            >
+              <span style={{ fontSize: 22 }}>🔒</span>
+              <span style={{ fontSize: 18, fontWeight: 600, color: '#475569' }}>
+                100% gratuit
+              </span>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: '#F8FAFC',
+                border: '1.5px solid #E2E8F0',
+                borderRadius: 12,
+                padding: '12px 24px',
+                gap: 10,
+              }}
+            >
+              <span style={{ fontSize: 22 }}>📊</span>
+              <span style={{ fontSize: 18, fontWeight: 600, color: '#475569' }}>
+                Barème IR 2024
+              </span>
+            </div>
           </div>
         </div>
       </div>
