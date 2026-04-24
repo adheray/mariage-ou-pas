@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/lib/providers";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${geist.variable} antialiased`}>
       <body className="min-h-screen bg-[#F8F9FA]">
-        <GoogleAnalytics />
+        <CookieBanner />
         <Providers>{children}</Providers>
       </body>
     </html>
