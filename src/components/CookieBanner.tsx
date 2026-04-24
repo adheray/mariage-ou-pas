@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.trim();
 const CONSENT_KEY = 'cookie_consent';
 
 type Consent = 'accepted' | 'refused' | null;
