@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${geist.variable} antialiased`}>
-      <body className="min-h-screen bg-[#FDF2F8]">
+      <body className="min-h-screen bg-[#F8F9FA]">
         <GoogleAnalytics />
         <Providers>{children}</Providers>
       </body>

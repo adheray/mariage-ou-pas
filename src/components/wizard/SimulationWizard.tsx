@@ -97,10 +97,10 @@ function MoneySlider({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <Label className="text-sm font-semibold text-[#831843]">{label}</Label>
+        <Label className="text-sm font-semibold text-slate-800">{label}</Label>
         <div className="flex items-center gap-2">
           {visual.label && (
-            <span className="text-xs text-[#9D174D]/60 hidden sm:inline">{visual.label}</span>
+            <span className="text-xs text-slate-400 hidden sm:inline">{visual.label}</span>
           )}
           <span className="text-3xl transition-transform duration-300 hover:scale-110">{visual.emoji}</span>
         </div>
@@ -115,7 +115,7 @@ function MoneySlider({
         onChange={(e) => onChange(Number(e.target.value))}
         className="slider-rose w-full"
         style={{
-          background: `linear-gradient(to right, #DB2777 0%, #DB2777 ${pct}%, #FBCFE8 ${pct}%, #FBCFE8 100%)`
+          background: `linear-gradient(to right, #E11D48 0%, #E11D48 ${pct}%, #E2E8F0 ${pct}%, #E2E8F0 100%)`
         }}
       />
 
@@ -127,7 +127,7 @@ function MoneySlider({
           placeholder="0"
           className="w-36 h-14 text-center text-2xl font-semibold input-premium rounded-2xl number-display"
         />
-        <span className="text-lg font-medium text-[#9D174D]/60">€/an</span>
+        <span className="text-lg font-medium text-slate-400">€/an</span>
       </div>
     </div>
   );
@@ -147,10 +147,10 @@ function PatrimoineSlider({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <Label className="text-sm font-semibold text-[#831843]">Patrimoine immobilier</Label>
+        <Label className="text-sm font-semibold text-slate-800">Patrimoine immobilier</Label>
         <div className="flex items-center gap-2">
           {visual.label && (
-            <span className="text-xs text-[#9D174D]/60 hidden sm:inline">{visual.label}</span>
+            <span className="text-xs text-slate-400 hidden sm:inline">{visual.label}</span>
           )}
           <span className="text-3xl transition-transform duration-300 hover:scale-110">{visual.emoji}</span>
         </div>
@@ -177,7 +177,7 @@ function PatrimoineSlider({
           placeholder="0"
           className="w-40 h-14 text-center text-2xl font-semibold input-premium rounded-2xl number-display"
         />
-        <span className="text-lg font-medium text-[#9D174D]/60">€</span>
+        <span className="text-lg font-medium text-slate-400">€</span>
       </div>
     </div>
   );
@@ -185,11 +185,11 @@ function PatrimoineSlider({
 
 function Tip({ text }: { text: string }) {
   return (
-    <div className="flex items-start gap-3 p-4 bg-white/60 backdrop-blur rounded-2xl border border-[#FBCFE8]">
-      <div className="w-8 h-8 rounded-full bg-[#FDF2F8] flex items-center justify-center shrink-0">
-        <Lightbulb className="w-4 h-4 text-[#DB2777]" />
+    <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+      <div className="w-7 h-7 rounded-lg bg-white border border-slate-100 flex items-center justify-center shrink-0">
+        <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
       </div>
-      <p className="text-sm text-[#831843]/80 leading-relaxed pt-1">{text}</p>
+      <p className="text-sm text-slate-500 leading-relaxed pt-0.5">{text}</p>
     </div>
   );
 }
@@ -287,10 +287,10 @@ export function SimulationWizard() {
             {result.recommandation === 'mariage' ? '💍' :
              result.recommandation === 'pacs' ? '📝' : '🤷'}
           </div>
-          <p className="text-sm text-[#9D174D]/60 uppercase tracking-widest mb-2 font-medium">
+          <p className="text-sm text-slate-400 uppercase tracking-widest mb-2 font-medium">
             Notre recommandation
           </p>
-          <h2 className="text-3xl font-bold text-[#831843]">
+          <h2 className="text-3xl font-bold text-slate-900">
             {result.recommandation === 'mariage' ? 'Mariez-vous !' :
              result.recommandation === 'pacs' ? 'Pacsez-vous !' :
              'Comme vous voulez !'}
@@ -327,8 +327,8 @@ export function SimulationWizard() {
 
         {/* Timeline */}
         {result.economieMarriage > 0 && (
-          <div className="bg-[#FDF2F8] rounded-2xl p-5 mb-6 border border-[#FBCFE8]">
-            <p className="text-sm font-semibold text-[#831843] mb-4 flex items-center gap-2">
+          <div className="bg-slate-50 rounded-2xl p-5 mb-6 border border-slate-100">
+            <p className="text-sm font-semibold text-slate-700 mb-4 flex items-center gap-2">
               <span>📈</span> Projection dans le temps
             </p>
             <div className="grid grid-cols-3 gap-3">
@@ -337,11 +337,11 @@ export function SimulationWizard() {
                 { years: 10, value: eco10 },
                 { years: 20, value: eco20 },
               ].map(({ years, value }) => (
-                <div key={years} className="text-center bg-white/60 rounded-xl p-3">
-                  <p className="text-xl font-bold text-[#DB2777] number-display">
+                <div key={years} className="text-center bg-white rounded-xl p-3 border border-slate-100">
+                  <p className="text-xl font-bold text-[#E11D48] number-display">
                     {value.toLocaleString('fr-FR')}€
                   </p>
-                  <p className="text-xs text-[#9D174D]/60 font-medium">{years} ans</p>
+                  <p className="text-xs text-slate-400 font-medium">{years} ans</p>
                 </div>
               ))}
             </div>
@@ -359,12 +359,12 @@ export function SimulationWizard() {
           </div>
         )}
 
-        <p className="text-sm text-[#831843]/70 mb-6 leading-relaxed text-center">
+        <p className="text-sm text-slate-500 mb-6 leading-relaxed text-center">
           {result.explication}
         </p>
 
         {/* Détails */}
-        <div className="text-xs text-[#9D174D]/50 text-center mb-6 space-y-1">
+        <div className="text-xs text-slate-400 text-center mb-6 space-y-1">
           <p>Impôts séparés : <span className="font-semibold">{result.impotCelibataires.toLocaleString('fr-FR')}€/an</span></p>
           <p>Impôts ensemble : <span className="font-semibold">{result.impotMaries.toLocaleString('fr-FR')}€/an</span></p>
         </div>
@@ -376,14 +376,14 @@ export function SimulationWizard() {
               href="https://www.fortuneo.fr/compte-courant?codeParrain=AFFILIATE_FORTUNEO" /* TODO: remplacer par lien Awin Fortuneo */
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="flex items-center gap-3 p-4 rounded-xl bg-white border-2 border-[#FBCFE8] hover:border-[#DB2777] hover:shadow-sm transition-all cursor-pointer group"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all cursor-pointer group"
             >
               <span className="text-2xl">🏦</span>
               <div className="flex-1 text-left">
-                <p className="text-sm font-semibold text-[#831843]">Ouvrez un compte joint chez Fortuneo</p>
-                <p className="text-xs text-[#9D174D]/60">Gratuit, sans conditions de revenus — parfait pour gérer vos finances communes</p>
+                <p className="text-sm font-semibold text-slate-800">Ouvrez un compte joint chez Fortuneo</p>
+                <p className="text-xs text-slate-500">Gratuit, sans conditions de revenus — parfait pour gérer vos finances communes</p>
               </div>
-              <span className="text-[#DB2777] text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
+              <span className="text-slate-400 text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           )}
           {result.recommandation === 'pacs' && (
@@ -391,14 +391,14 @@ export function SimulationWizard() {
               href="https://www.fortuneo.fr/compte-courant?codeParrain=AFFILIATE_FORTUNEO" /* TODO: remplacer par lien Awin Fortuneo */
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="flex items-center gap-3 p-4 rounded-xl bg-white border-2 border-[#FBCFE8] hover:border-[#DB2777] hover:shadow-sm transition-all cursor-pointer group"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all cursor-pointer group"
             >
               <span className="text-2xl">🏦</span>
               <div className="flex-1 text-left">
-                <p className="text-sm font-semibold text-[#831843]">Ouvrez un compte joint chez Fortuneo</p>
-                <p className="text-xs text-[#9D174D]/60">Idéal pour les couples pacsés — zéro frais de tenue de compte</p>
+                <p className="text-sm font-semibold text-slate-800">Ouvrez un compte joint chez Fortuneo</p>
+                <p className="text-xs text-slate-500">Idéal pour les couples pacsés — zéro frais de tenue de compte</p>
               </div>
-              <span className="text-[#DB2777] text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
+              <span className="text-slate-400 text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           )}
           {(result.economieMarriage > 0 || result.economiePacs > 0) && (
@@ -406,16 +406,16 @@ export function SimulationWizard() {
               href="https://yomoni.fr/?parrain=AFFILIATE_YOMONI" /* TODO: remplacer par lien Yomoni */
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="flex items-center gap-3 p-4 rounded-xl bg-white border-2 border-[#FBCFE8] hover:border-[#DB2777] hover:shadow-sm transition-all cursor-pointer group"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all cursor-pointer group"
             >
               <span className="text-2xl">📈</span>
               <div className="flex-1 text-left">
-                <p className="text-sm font-semibold text-[#831843]">Placez votre économie avec Yomoni</p>
-                <p className="text-xs text-[#9D174D]/60">
+                <p className="text-sm font-semibold text-slate-800">Placez votre économie avec Yomoni</p>
+                <p className="text-xs text-slate-500">
                   {Math.max(result.economieMarriage, result.economiePacs).toLocaleString('fr-FR')}€/an investis = {(Math.max(result.economieMarriage, result.economiePacs) * 10 * 0.05).toLocaleString('fr-FR', { maximumFractionDigits: 0 })}€ en 10 ans (hypothèse 5%/an)
                 </p>
               </div>
-              <span className="text-[#DB2777] text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
+              <span className="text-slate-400 text-xs font-medium group-hover:translate-x-0.5 transition-transform">→</span>
             </a>
           )}
         </div>
@@ -440,7 +440,7 @@ export function SimulationWizard() {
 
         <button
           onClick={reset}
-          className="w-full h-12 rounded-xl border-2 border-[#FBCFE8] text-[#DB2777] hover:bg-[#FDF2F8] cursor-pointer font-medium flex items-center justify-center gap-2 transition-colors"
+          className="w-full h-12 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-50 cursor-pointer font-medium flex items-center justify-center gap-2 transition-colors"
         >
           <RotateCcw className="w-4 h-4" />
           Nouvelle simulation
@@ -452,14 +452,20 @@ export function SimulationWizard() {
   return (
     <div className="card-premium rounded-3xl p-8">
       {/* Progress */}
-      <div className="flex gap-2 mb-8">
+      <div className="flex items-center gap-1 mb-8">
         {STEPS.map((_, i) => (
-          <div
-            key={i}
-            className={`h-2 flex-1 rounded-full transition-all duration-500 ${
-              i <= step ? 'bg-[#DB2777]' : 'bg-[#FBCFE8]'
-            }`}
-          />
+          <div key={i} className="flex items-center gap-1 flex-1">
+            <div className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-semibold transition-all duration-300 ${
+              i < step ? 'bg-slate-900 text-white' :
+              i === step ? 'bg-[#E11D48] text-white' :
+              'bg-slate-100 text-slate-400'
+            }`}>
+              {i + 1}
+            </div>
+            {i < STEPS.length - 1 && (
+              <div className={`h-[2px] flex-1 transition-all duration-500 ${i < step ? 'bg-slate-900' : 'bg-slate-100'}`} />
+            )}
+          </div>
         ))}
       </div>
 
@@ -472,7 +478,7 @@ export function SimulationWizard() {
             onChange={(v) => setValue('revenus1', v)}
           />
           <div>
-            <Label className="text-sm font-semibold text-[#831843] mb-3 block">Statut</Label>
+            <Label className="text-sm font-semibold text-slate-800 mb-3 block">Statut</Label>
             <div className="grid grid-cols-2 gap-3">
               {STATUTS.map((s) => (
                 <button
@@ -501,7 +507,7 @@ export function SimulationWizard() {
             onChange={(v) => setValue('revenus2', v)}
           />
           <div>
-            <Label className="text-sm font-semibold text-[#831843] mb-3 block">Statut</Label>
+            <Label className="text-sm font-semibold text-slate-800 mb-3 block">Statut</Label>
             <div className="grid grid-cols-2 gap-3">
               {STATUTS.map((s) => (
                 <button
@@ -526,7 +532,7 @@ export function SimulationWizard() {
         <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <Label className="text-sm font-semibold text-[#831843]">Enfants actuels</Label>
+              <Label className="text-sm font-semibold text-slate-800">Enfants actuels</Label>
               <span className="text-3xl">{getChildrenVisual(enfants) || '—'}</span>
             </div>
             <div className="flex items-center gap-4">
@@ -538,7 +544,7 @@ export function SimulationWizard() {
                 −
               </button>
               <div className="flex-1 text-center">
-                <span className="text-6xl font-light text-[#831843] number-display">{enfants}</span>
+                <span className="text-6xl font-light text-slate-800 number-display">{enfants}</span>
               </div>
               <button
                 type="button"
@@ -552,7 +558,7 @@ export function SimulationWizard() {
 
           <div>
             <div className="flex items-center justify-between mb-4">
-              <Label className="text-sm font-semibold text-[#831843]">Enfants à venir</Label>
+              <Label className="text-sm font-semibold text-slate-800">Enfants à venir</Label>
               <span className="text-3xl">{getFutureChildrenVisual(enfantsANaitre) || '—'}</span>
             </div>
             <div className="flex items-center gap-4">
@@ -564,7 +570,7 @@ export function SimulationWizard() {
                 −
               </button>
               <div className="flex-1 text-center">
-                <span className="text-6xl font-light text-[#831843] number-display">{enfantsANaitre}</span>
+                <span className="text-6xl font-light text-slate-800 number-display">{enfantsANaitre}</span>
               </div>
               <button
                 type="button"
@@ -577,7 +583,7 @@ export function SimulationWizard() {
           </div>
 
           <div>
-            <Label className="text-sm font-semibold text-[#831843] mb-3 block">Situation actuelle</Label>
+            <Label className="text-sm font-semibold text-slate-800 mb-3 block">Situation actuelle</Label>
             <div className="grid grid-cols-3 gap-3">
               {SITUATIONS.map((s) => (
                 <button
@@ -612,7 +618,7 @@ export function SimulationWizard() {
       {step === 4 && (
         <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
           <div>
-            <Label className="text-sm font-semibold text-[#831843] mb-3 block">Email (optionnel)</Label>
+            <Label className="text-sm font-semibold text-slate-800 mb-3 block">Email (optionnel)</Label>
             <Input
               type="email"
               placeholder="vous@email.com"
@@ -628,7 +634,7 @@ export function SimulationWizard() {
       {step === 5 && (
         <div className="text-center py-8 animate-in fade-in zoom-in-95 duration-500">
           <div className="text-7xl mb-6">💕</div>
-          <p className="text-2xl font-semibold text-[#831843] mb-8">
+          <p className="text-2xl font-semibold text-slate-800 mb-8">
             Vous vous aimez ?
           </p>
           <div className="flex gap-4 justify-center">

@@ -49,38 +49,38 @@
 }
 
 :root {
-  --background: #FDF2F8;
-  --foreground: #831843;
+  --background: #F8F9FA;
+  --foreground: #0F172A;
   --card: #FFFFFF;
-  --card-foreground: #831843;
+  --card-foreground: #0F172A;
   --popover: #FFFFFF;
-  --popover-foreground: #831843;
-  --primary: #DB2777;
+  --popover-foreground: #0F172A;
+  --primary: #E11D48;
   --primary-foreground: #FFFFFF;
-  --secondary: #FBCFE8;
-  --secondary-foreground: #9D174D;
-  --muted: #FCE7F3;
-  --muted-foreground: #9D174D;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #475569;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
   --accent: #CA8A04;
   --accent-foreground: #FFFFFF;
   --destructive: #DC2626;
-  --border: #FBCFE8;
-  --input: #FBCFE8;
-  --ring: #DB2777;
-  --chart-1: #DB2777;
-  --chart-2: #F472B6;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #E11D48;
+  --chart-1: #E11D48;
+  --chart-2: #10B981;
   --chart-3: #CA8A04;
   --chart-4: #22C55E;
   --chart-5: #3B82F6;
   --radius: 0.75rem;
-  --sidebar: #FDF2F8;
-  --sidebar-foreground: #831843;
-  --sidebar-primary: #DB2777;
+  --sidebar: #F8F9FA;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #E11D48;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #FCE7F3;
-  --sidebar-accent-foreground: #9D174D;
-  --sidebar-border: #FBCFE8;
-  --sidebar-ring: #DB2777;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #475569;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #E11D48;
 }
 
 .dark {
@@ -147,15 +147,15 @@
     height: 28px;
     border-radius: 50%;
     background: white;
-    border: 4px solid #DB2777;
+    border: 3px solid #E11D48;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
     transition: all 0.2s ease;
   }
 
   .slider-rose::-webkit-slider-thumb:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(219, 39, 119, 0.4);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.3);
   }
 
   .slider-rose::-webkit-slider-thumb:active {
@@ -167,15 +167,15 @@
     height: 28px;
     border-radius: 50%;
     background: white;
-    border: 4px solid #DB2777;
+    border: 3px solid #E11D48;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
     transition: all 0.2s ease;
   }
 
   .slider-rose::-moz-range-thumb:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(219, 39, 119, 0.4);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.3);
   }
 
   .slider-gold {
@@ -218,33 +218,29 @@
 
   /* Premium Card Style */
   .card-premium {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(251, 207, 232, 0.5);
-    box-shadow:
-      0 4px 6px -1px rgba(219, 39, 119, 0.05),
-      0 10px 30px -5px rgba(219, 39, 119, 0.1),
-      0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    background: white;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   /* Premium Input Style */
   .input-premium {
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #FBCFE8;
+    background: #FAFAFA;
+    border: 1.5px solid #E2E8F0;
     transition: all 0.2s ease;
   }
 
   .input-premium:focus {
     background: white;
-    border-color: #DB2777;
-    box-shadow: 0 0 0 4px rgba(219, 39, 119, 0.1);
+    border-color: #E11D48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
   }
 
   /* Premium Button Style */
   .btn-premium {
-    background: linear-gradient(135deg, #DB2777 0%, #BE185D 100%);
+    background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%);
     box-shadow:
-      0 4px 14px -2px rgba(219, 39, 119, 0.4),
+      0 4px 14px -2px rgba(225, 29, 72, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     transition: all 0.2s ease;
   }
@@ -252,7 +248,7 @@
   .btn-premium:hover {
     transform: translateY(-1px);
     box-shadow:
-      0 8px 20px -4px rgba(219, 39, 119, 0.5),
+      0 8px 20px -4px rgba(225, 29, 72, 0.4),
       0 0 0 1px rgba(255, 255, 255, 0.15) inset;
   }
 
@@ -263,15 +259,15 @@
   /* Stepper Button Style */
   .btn-stepper {
     background: white;
-    border: 2px solid #FBCFE8;
-    color: #DB2777;
+    border: 1.5px solid #E2E8F0;
+    color: #475569;
     font-weight: 500;
     transition: all 0.2s ease;
   }
 
   .btn-stepper:hover {
-    background: #FDF2F8;
-    border-color: #F472B6;
+    background: #F8F9FA;
+    border-color: #CBD5E1;
     transform: scale(1.05);
   }
 
@@ -282,21 +278,21 @@
   /* Choice Button Style */
   .btn-choice {
     background: white;
-    border: 2px solid #FBCFE8;
-    color: #831843;
+    border: 1.5px solid #E2E8F0;
+    color: #374151;
     transition: all 0.2s ease;
   }
 
   .btn-choice:hover {
-    border-color: #F472B6;
-    background: #FDF2F8;
+    border-color: #CBD5E1;
+    background: #F8F9FA;
   }
 
   .btn-choice.selected {
-    background: #DB2777;
-    border-color: #DB2777;
+    background: #0F172A;
+    border-color: #0F172A;
     color: white;
-    box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
   }
 
   /* Number Display */
