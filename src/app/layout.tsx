@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/lib/providers";
 import { CookieBanner } from "@/components/CookieBanner";
@@ -67,8 +66,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${geist.variable} antialiased`}>
       <body className="min-h-screen bg-[#F8F9FA]">
-        <Script
-          id="webapp-schema"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
         />
