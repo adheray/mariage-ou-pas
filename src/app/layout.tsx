@@ -25,20 +25,11 @@ export const metadata: Metadata = {
     siteName: "Mariage ou Pas",
     locale: "fr_FR",
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Simulateur fiscal mariage ou PACS",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mariage ou PACS : Simulateur Fiscal Gratuit",
     description: "Calculez vos économies d'impôts en 2 minutes.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
