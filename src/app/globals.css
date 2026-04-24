@@ -289,10 +289,10 @@
   }
 
   .btn-choice.selected {
-    background: #0F172A;
-    border-color: #0F172A;
+    background: #E11D48;
+    border-color: #E11D48;
     color: white;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
   }
 
   /* Number Display */

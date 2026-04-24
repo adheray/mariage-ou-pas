@@ -456,14 +456,14 @@ export function SimulationWizard() {
         {STEPS.map((_, i) => (
           <div key={i} className="flex items-center gap-1 flex-1">
             <div className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-semibold transition-all duration-300 ${
-              i < step ? 'bg-slate-900 text-white' :
+              i < step ? 'bg-[#E11D48]/20 text-[#E11D48] ring-1 ring-[#E11D48]/40' :
               i === step ? 'bg-[#E11D48] text-white' :
               'bg-slate-100 text-slate-400'
             }`}>
               {i + 1}
             </div>
             {i < STEPS.length - 1 && (
-              <div className={`h-[2px] flex-1 transition-all duration-500 ${i < step ? 'bg-slate-900' : 'bg-slate-100'}`} />
+              <div className={`h-[2px] flex-1 transition-all duration-500 ${i < step ? 'bg-[#E11D48]/30' : 'bg-slate-100'}`} />
             )}
           </div>
         ))}
