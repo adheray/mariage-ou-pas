@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Simulation {
+  id        String   @id @default(cuid())
+  email     String?
+
+  // Personne 1
+  revenus1  Float
+  statut1   String   // salarie, indep, fonctionnaire, chomage, retraite
+
+  // Personne 2
+  revenus2  Float
+  statut2   String
+
+  // Situation
+  enfants          Int      @default(0)
+  enfantsANaitre   Int      @default(0)
+  patrimoine       Float    @default(0)
+  situationActuelle String  // concubins, coloc, pacses
+
+  // Résultats
+  economieMarriage  Float?
+  economiePacs      Float?
+  recommandation    String?  // mariage, pacs, rien
+
+  // Question fun
+  ilsSAiment       Boolean?
+
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+}
