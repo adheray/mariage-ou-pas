@@ -5,15 +5,34 @@ import { LogoFull } from "@/components/Logo";
 
 export default function Home() {
   return (
-    <main className="min-h-screen py-12 px-4" style={{
-      background: `
-        radial-gradient(ellipse 70% 50% at 15% 0%, rgba(225, 29, 72, 0.07) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 85% 90%, rgba(245, 158, 11, 0.05) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(148, 163, 184, 0.04) 0%, transparent 70%),
-        #F8F9FA
-      `
-    }}>
-      <div className="max-w-md mx-auto">
+    <main className="relative min-h-screen py-12 px-4 overflow-hidden bg-[#F8F9FA]">
+
+      {/* Watermark ring — grand décor en fond */}
+      <div className="pointer-events-none fixed inset-0 flex items-center justify-center" aria-hidden="true">
+        <svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-[0.035]">
+          {/* Outer ring */}
+          <circle cx="450" cy="500" r="360" stroke="#E11D48" strokeWidth="3" fill="none" />
+          {/* Inner ring */}
+          <circle cx="450" cy="500" r="280" stroke="#E11D48" strokeWidth="1.5" fill="none" />
+          {/* Band */}
+          <ellipse cx="450" cy="500" rx="360" ry="40" stroke="#E11D48" strokeWidth="1" fill="none" />
+          {/* Diamond facets */}
+          <polygon points="450,80 560,240 450,290 340,240" stroke="#E11D48" strokeWidth="2" fill="#E11D48" fillOpacity="0.15" />
+          <polygon points="450,80 560,240 450,180 340,240" stroke="#E11D48" strokeWidth="1" fill="#E11D48" fillOpacity="0.08" />
+          <polygon points="340,240 450,290 560,240 450,290" stroke="#E11D48" strokeWidth="1" fill="#E11D48" fillOpacity="0.05" />
+          {/* Side facet lines */}
+          <line x1="450" y1="80" x2="450" y2="290" stroke="#E11D48" strokeWidth="1" opacity="0.4" />
+          <line x1="340" y1="240" x2="560" y2="240" stroke="#E11D48" strokeWidth="1" opacity="0.4" />
+          {/* Shine dots */}
+          <circle cx="390" cy="130" r="6" fill="#F59E0B" fillOpacity="0.5" />
+          <circle cx="700" cy="200" r="4" fill="#E11D48" fillOpacity="0.4" />
+          <circle cx="180" cy="280" r="4" fill="#E11D48" fillOpacity="0.3" />
+          <circle cx="720" cy="650" r="5" fill="#F59E0B" fillOpacity="0.3" />
+          <circle cx="160" cy="680" r="3" fill="#E11D48" fillOpacity="0.3" />
+        </svg>
+      </div>
+
+      <div className="max-w-md mx-auto relative z-10">
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <LogoFull />
