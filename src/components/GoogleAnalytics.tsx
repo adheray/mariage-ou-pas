@@ -2,6 +2,13 @@
 
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export function GoogleAnalytics() {
@@ -18,9 +25,9 @@ export function GoogleAnalytics() {
       function gtag(...args: unknown[]) {
         window.dataLayer.push(args);
       }
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', GA_ID);
-      (window as unknown as { gtag: typeof gtag }).gtag = gtag;
     };
   }, []);
 
