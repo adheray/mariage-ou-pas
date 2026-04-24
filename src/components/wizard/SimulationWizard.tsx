@@ -265,7 +265,7 @@ export function SimulationWizard() {
     ? `Je viens de découvrir que je pourrais économiser ${result.economieMarriage.toLocaleString('fr-FR')}€/an en me mariant ! 💍 Faites le test :`
     : '';
 
-  const shareUrl = 'https://mariage-ou-pas.vercel.app';
+  const shareUrl = 'https://mariage-ou-pas.fr';
 
   const shareTwitter = () => {
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank');

@@ -1,8 +1,30 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/lib/providers";
 import { CookieBanner } from "@/components/CookieBanner";
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mariage ou Pas — Simulateur Fiscal",
+  "url": "https://mariage-ou-pas.fr",
+  "description": "Simulateur fiscal gratuit comparant mariage et PACS pour l'impôt sur le revenu en France.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "inLanguage": "fr-FR",
+  "author": {
+    "@type": "Organization",
+    "name": "Bob le Développeur",
+    "url": "https://bob-le-developpeur.com"
+  }
+};
 
 const geist = Geist({
   variable: "--font-geist",
@@ -45,6 +67,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${geist.variable} antialiased`}>
       <body className="min-h-screen bg-[#F8F9FA]">
+        <Script
+          id="webapp-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        />
         <CookieBanner />
         <Providers>{children}</Providers>
       </body>
