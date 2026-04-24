@@ -24,10 +24,10 @@ export default function Home() {
           <h1 className="text-4xl font-bold tracking-tight mb-2">
             <span className="text-[#DB2777]">Mariage</span>
             {' '}
-            <span className="text-[#831843]">ou pas ?</span>
+            <span className="text-[#831843]">ou PACS ?</span>
           </h1>
           <p className="text-[#9D174D]/70">
-            Simulez votre avantage fiscal en 2 minutes
+            Simulateur fiscal gratuit — calculez vos économies d'impôts
           </p>
         </div>
 
@@ -58,6 +58,24 @@ export default function Home() {
 
         {/* FAQ */}
         <FAQ />
+
+        {/* SEO Content */}
+        <section className="mt-10 text-sm text-[#831843]/70 space-y-4">
+          <h2 className="text-base font-semibold text-[#831843]">
+            Pourquoi simuler l'avantage fiscal du mariage ou du PACS ?
+          </h2>
+          <p>
+            Le <strong>mariage</strong> et le <strong>PACS</strong> offrent les mêmes avantages fiscaux
+            pour l'impôt sur le revenu depuis 2005. Le quotient conjugal permet de mutualiser
+            les revenus du couple et de réduire l'imposition globale, surtout quand les
+            revenus sont très différents entre les partenaires.
+          </p>
+          <p>
+            Notre <strong>simulateur fiscal gratuit</strong> calcule instantanément vos économies
+            potentielles en fonction de vos revenus, votre situation familiale et votre patrimoine.
+            Plus de 14 000 couples ont déjà utilisé cet outil pour prendre leur décision.
+          </p>
+        </section>
 
         <footer className="mt-8 text-center">
           <p className="text-xs text-[#831843]/40">

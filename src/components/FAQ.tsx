@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import Script from 'next/script';
 
 const faqs = [
   {
@@ -18,11 +19,29 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
     <div className="mt-10">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <h2 className="text-lg font-semibold text-[#831843] mb-4 text-center">
         Questions fréquentes
       </h2>

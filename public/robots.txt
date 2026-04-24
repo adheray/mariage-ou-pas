@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mariage-ou-pas.vercel.app/sitemap.xml
