@@ -367,6 +367,13 @@ export function SimulationWizard() {
         <div className="text-xs text-slate-400 text-center mb-6 space-y-1">
           <p>Impôts séparés : <span className="font-semibold">{result.impotCelibataires.toLocaleString('fr-FR')}€/an</span></p>
           <p>Impôts ensemble : <span className="font-semibold">{result.impotMaries.toLocaleString('fr-FR')}€/an</span></p>
+          {result.partsMaries > 2 && (
+            <>
+              <p className="pt-1 font-medium text-slate-500">Quotient familial</p>
+              <p>Mariés : <span className="font-semibold">{result.partsMaries} parts</span></p>
+              <p>Séparés (parent principal) : <span className="font-semibold">{result.partsSeulPrincipal} parts</span></p>
+            </>
+          )}
         </div>
 
         {/* Affiliation — liens contextuels selon recommandation */}
